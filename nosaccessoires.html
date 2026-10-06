@@ -1,0 +1,1064 @@
+
+
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0">
+
+    <title>Ma Boutique - Accessoires</title>
+
+    <link rel="preconnect"
+        href="https://fonts.googleapis.com">
+
+    <link rel="preconnect"
+        href="https://fonts.gstatic.com"
+        crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet">
+  
+
+     <link rel="stylesheet" href="style.css">
+         <nav class="navbar">
+    <div class="logo">
+        <a href="https://www.tiktok.com/@almira.ci" target="_blank"  title="Visiter notre page TikTok">
+            ALMIRA.CI
+        </a>
+    </div>
+                    <ul class="nav-links">
+    <li><a href="index.html" class="btn primary">Accueil</a></li>
+    <li><a href="nosaccessoires.html" class="btn primary">Nos accessoires</a></li>
+    <li><a href="https://wa.me/2250720051143" class="btn primary">Contact</a></li>
+</ul>
+                </div>
+                    
+        </nav>
+        
+
+    <style>
+
+        /* =========================
+           RESET ET STYLE GENERAL
+        ========================= */
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: #f6f7fb;
+            color: #1d1d35;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        /* =========================
+           EN-TETE
+        ========================= */
+
+        header {
+            background: linear-gradient(
+                135deg,
+                #111322,
+                #25204a
+            );
+
+            color: white;
+            text-align: center;
+            padding: 45px 20px;
+        }
+
+        header h1 {
+            font-size: 38px;
+            font-weight: 800;
+            margin-bottom: 10px;
+        }
+
+        header h1 span {
+            color: #a78bfa;
+        }
+
+        header p {
+            font-size: 15px;
+            color: #d6d3e8;
+        }
+
+        /* =========================
+           CONTENEUR PRINCIPAL
+        ========================= */
+
+        .container {
+            max-width: 1400px;
+            margin: 40px auto;
+            padding: 0 25px;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .section-title h2 {
+            font-size: 28px;
+            color: #202044;
+            margin-bottom: 8px;
+        }
+
+        .section-title p {
+            color: #77778b;
+            font-size: 14px;
+        }
+
+        /* =========================
+           GRILLE DES ACCESSOIRES
+        ========================= */
+
+        .products-grid {
+            display: grid;
+
+            /* 4 ACCESSOIRES PAR LIGNE */
+            grid-template-columns: repeat(4, 1fr);
+
+            gap: 25px;
+        }
+
+        /* =========================
+           CARTE PRODUIT
+        ========================= */
+
+        .product-card {
+            background: white;
+            border-radius: 18px;
+            overflow: hidden;
+
+            box-shadow: 0 6px 25px
+                rgba(25, 25, 60, 0.07);
+
+            transition: transform 0.3s ease,
+                        box-shadow 0.3s ease;
+
+            border: 1px solid #eeeeF5;
+        }
+
+        .product-card:hover {
+            transform: translateY(-7px);
+
+            box-shadow: 0 12px 35px
+                rgba(25, 25, 60, 0.15);
+        }
+
+        /* =========================
+           IMAGE PRODUIT
+        ========================= */
+
+        .product-image {
+            width: 100%;
+            height: 220px;
+
+            object-fit: cover;
+            display: block;
+
+            background: #f0f0f7;
+        }
+
+        /* =========================
+           INFORMATIONS PRODUIT
+        ========================= */
+
+        .product-info {
+            padding: 20px;
+            text-align: center;
+        }
+
+        .product-name {
+            font-size: 16px;
+            font-weight: 600;
+            color: #242449;
+
+            min-height: 48px;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .product-price {
+            font-size: 21px;
+            font-weight: 800;
+
+            color: #6935e8;
+
+            margin: 10px 0 18px;
+        }
+
+        /* =========================
+           BOUTON ACHETER
+        ========================= */
+
+        .buy-button {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            gap: 9px;
+
+            width: 100%;
+
+            padding: 13px 10px;
+
+            border-radius: 10px;
+
+            background: #151525;
+            color: white;
+
+            font-size: 13px;
+            font-weight: 600;
+
+            transition: background 0.3s ease,
+                        transform 0.2s ease;
+        }
+
+        .buy-button:hover {
+            background: #6935e8;
+            transform: scale(1.02);
+        }
+
+        .tiktok-icon {
+            font-size: 18px;
+            font-weight: 800;
+        }
+
+        .external-icon {
+            font-size: 14px;
+        }
+
+        /* =========================
+           PIED DE PAGE
+        ========================= */
+
+        footer {
+            text-align: center;
+
+            padding: 30px 20px;
+
+            margin-top: 50px;
+
+            background: #151525;
+            color: #d6d3e8;
+
+            font-size: 13px;
+        }
+
+        /* =========================
+           RESPONSIVE DESIGN
+        ========================= */
+
+        /* TABLETTES */
+
+        @media (max-width: 1100px) {
+
+            .products-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+
+        }
+
+        /* PETITES TABLETTES */
+
+        @media (max-width: 800px) {
+
+            .products-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            header h1 {
+                font-size: 30px;
+            }
+
+            .product-image {
+                height: 200px;
+            }
+
+        }
+
+        /* TELEPHONES */
+
+        @media (max-width: 480px) {
+
+            .container {
+                padding: 0 15px;
+            }
+
+            .products-grid {
+                grid-template-columns: 1fr;
+            }
+
+            header {
+                padding: 35px 15px;
+            }
+
+            header h1 {
+                font-size: 25px;
+            }
+
+            .product-image {
+                height: 240px;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+    <!-- =========================
+         EN-TETE
+    ========================= -->
+
+    <header>
+
+        <h1>
+            Ma <span>Boutique</span>
+        </h1>
+
+        <p>ALMIRA.CI !
+        </p>
+
+    </header>
+
+
+    <!-- =========================
+         CONTENU PRINCIPAL
+    ========================= -->
+
+    <main class="container">
+
+
+        <div class="section-title">
+
+            <h2>
+                Nos Accessoires
+            </h2>
+
+            <p>
+                Découvrez nos accessoires tendance
+            </p>
+
+        </div>
+
+
+        <!-- GRILLE DES PRODUITS -->
+
+        <div class="products-grid">
+
+
+            <!-- PRODUIT 1 -->
+
+            <article class="product-card">
+
+                <img
+                    src="images/im3.jpg"
+                    alt="bracelet en diamant"
+                    class="product-image"
+                >
+
+                <div class="product-info">
+
+                    <h3 class="product-name">
+                      bracelet en diamant 
+                    </h3>
+
+                    <p class="product-price">
+                        250 000 000 FCFA
+                    </p>
+
+                    <a
+                        href="https://wa.me/2250720051143"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        class="buy-button"
+                    >
+
+                        
+
+                        Acheter
+                        <span class="external-icon">
+                            ↗
+                        </span>
+
+                    </a>
+
+                </div>
+
+            </article>
+
+
+            <!-- PRODUIT 3 -->
+
+            <article class="product-card">
+
+                <img
+                    src="images/im2.jpeg"
+                    alt="montre"
+                    class="product-image"
+                >
+
+                <div class="product-info">
+
+                    <h3 class="product-name">
+                      montre elegante
+                    </h3>
+
+                    <p class="product-price">
+                        12 000 FCFA
+                    </p>
+
+                    <a
+                        href="https://wa.me/2250720051143"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        class="buy-button"
+                    >
+
+                       
+
+                        Acheter 
+
+                        <span class="external-icon">
+                            ↗
+                        </span>
+
+                    </a>
+
+                </div>
+
+            </article>
+
+
+
+
+           
+
+            <!-- PRODUIT 3 -->
+
+            <article class="product-card">
+
+                <img
+                    src="images/im4.jpg"
+                    alt="bracelet"
+                    class="product-image"
+                >
+
+                <div class="product-info">
+
+                    <h3 class="product-name">
+                       bracelet
+                    </h3>
+
+                    <p class="product-price">
+                        12 000 FCFA
+                    </p>
+
+                    <a
+                        href="https://wa.me/2250720051143"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        class="buy-button"
+                    >
+
+                        
+
+                        Acheter
+
+                        <span class="external-icon">
+                            ↗
+                        </span>
+
+                    </a>
+
+                </div>
+
+            </article>
+
+
+            <!-- PRODUIT 4 -->
+
+            <article class="product-card">
+
+                <img
+                    src="images/im5.jpg"
+                    alt="Sacoche tendance"
+                    class="product-image"
+                >
+
+                <div class="product-info">
+
+                    <h3 class="product-name">
+                        Sacoche tendance
+                    </h3>
+
+                    <p class="product-price">
+                        15 000 FCFA
+                    </p>
+
+                    <a
+                        href="https://wa.me/2250720051143"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        class="buy-button"
+                    >
+
+
+                        Acheter 
+
+                        <span class="external-icon">
+                            ↗
+                        </span>
+
+                    </a>
+
+                </div>
+
+            </article>
+
+
+
+
+             <article class="product-card">
+
+                <img
+                    src="images/im11.jpg"
+                    alt="Sacoche tendance"
+                    class="product-image"
+                >
+
+                <div class="product-info">
+
+                    <h3 class="product-name">
+                        Sacoche tendance
+                    </h3>
+
+                    <p class="product-price">
+                        15 000 FCFA
+                    </p>
+
+                    <a
+                        href="https://wa.me/2250720051143"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        class="buy-button"
+                    >
+
+                        
+
+                        Acheter 
+
+                        <span class="external-icon">
+                            ↗
+                        </span>
+
+                    </a>
+
+                </div>
+
+            </article>
+
+
+ <article class="product-card">
+
+                <img
+                    src="images/im12.jpg"
+                    alt="Sacoche tendance"
+                    class="product-image"
+                >
+
+                <div class="product-info">
+
+                    <h3 class="product-name">
+                        Sacoche tendance
+                    </h3>
+
+                    <p class="product-price">
+                        15 000 FCFA
+                    </p>
+
+                    <a
+                        href="https://wa.me/2250720051143"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        class="buy-button"
+                    >
+
+
+                        Acheter 
+                        <span class="external-icon">
+                            ↗
+                        </span>
+
+                    </a>
+
+                </div>
+
+            </article>
+
+
+
+
+
+
+
+
+
+             <article class="product-card">
+
+                <img
+                    src="images/im13.jpg"
+                    alt="Sacoche tendance"
+                    class="product-image"
+                >
+
+                <div class="product-info">
+
+                    <h3 class="product-name">
+                        Sacoche tendance
+                    </h3>
+
+                    <p class="product-price">
+                        15 000 FCFA
+                    </p>
+
+                    <a
+                        href="https://wa.me/2250720051143"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        class="buy-button"
+                    >
+
+                        
+
+                        Acheter 
+                        <span class="external-icon">
+                            ↗
+                        </span>
+
+                    </a>
+
+                </div>
+
+            </article>
+
+
+
+
+            <!-- PRODUIT 5 -->
+
+            <article class="product-card">
+
+                <img
+                    src="images/im6.jpg"
+                    alt="Bracelet élégant"
+                    class="product-image"
+                >
+
+                <div class="product-info">
+
+                    <h3 class="product-name">
+                        Bracelet élégant
+                    </h3>
+
+                    <p class="product-price">
+                        8 000 FCFA
+                    </p>
+
+                    <a
+                        href="https://wa.me/2250720051143"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        class="buy-button"
+                    >
+
+                        
+
+                        Acheter 
+
+                        <span class="external-icon">
+                            ↗
+                        </span>
+
+                    </a>
+
+                </div>
+
+            </article>
+
+
+            <!-- PRODUIT 6 -->
+
+            <article class="product-card">
+
+                <img
+                    src="images/im7.jpg"
+                    alt="Collier"
+                    class="product-image"
+                >
+
+                <div class="product-info">
+
+                    <h3 class="product-name">
+                        Collier homme
+                    </h3>
+
+                    <p class="product-price">
+                        10 000 FCFA
+                    </p>
+
+                    <a
+                        href="https://wa.me/2250720051143"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        class="buy-button"
+                    >
+
+
+                        Acheter 
+
+                        <span class="external-icon">
+                            ↗
+                        </span>
+
+                    </a>
+
+                </div>
+
+            </article>
+
+
+            <!-- PRODUIT 7 -->
+
+            <article class="product-card">
+
+                <img
+                    src="images/im8.jpg"
+                    alt="Casquette"
+                    class="product-image"
+                >
+
+                <div class="product-info">
+
+                    <h3 class="product-name">
+                        Casquette tendance
+                    </h3>
+
+                    <p class="product-price">
+                        9 000 FCFA
+                    </p>
+
+                    <a
+                        href="https://wa.me/2250720051143"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        class="buy-button"
+                    >
+
+                    
+
+                        Acheter
+
+                        <span class="external-icon">
+                            ↗
+                        </span>
+
+                    </a>
+
+                </div>
+
+            </article>
+
+
+             <!-- PRODUIT 8-->
+
+            <article class="product-card">
+
+                <img
+                    src="images/i1.jpeg"
+                    alt="Casquette"
+                    class="product-image"
+                >
+
+                <div class="product-info">
+
+                    <h3 class="product-name">
+                        Casquette tendance
+                    </h3>
+
+                    <p class="product-price">
+                        9 000 FCFA
+                    </p>
+
+                    <a
+                        href="https://wa.me/2250720051143"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        class="buy-button"
+                    >
+
+                        
+
+                        Acheter 
+
+                        <span class="external-icon">
+                            ↗
+                        </span>
+
+                    </a>
+
+                </div>
+
+            </article>
+
+
+             <!-- PRODUIT 9-->
+
+            <article class="product-card">
+
+                <img
+                    src="images/i2.jpeg"
+                    alt="Casquette"
+                    class="product-image"
+                >
+
+                <div class="product-info">
+
+                    <h3 class="product-name">
+                        Casquette tendance
+                    </h3>
+
+                    <p class="product-price">
+                        9 000 FCFA
+                    </p>
+
+                    <a
+                        href="https://wa.me/2250720051143"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        class="buy-button"
+                    >
+
+                        Acheter 
+
+                        <span class="external-icon">
+                            ↗
+                        </span>
+
+                    </a>
+
+                </div>
+
+            </article>
+
+
+ <!-- PRODUIT 10 -->
+
+            <article class="product-card">
+
+                <img
+                    src="images/i3.jpeg"
+                    alt="Casquette"
+                    class="product-image"
+                >
+
+                <div class="product-info">
+
+                    <h3 class="product-name">
+                        Casquette tendance
+                    </h3>
+
+                    <p class="product-price">
+                        9 000 FCFA
+                    </p>
+
+                    <a
+                        href="https://wa.me/2250720051143"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        class="buy-button"
+                    >
+
+
+                        Acheter 
+
+                        <span class="external-icon">
+                            ↗
+                        </span>
+
+                    </a>
+
+                </div>
+
+            </article>
+
+ <!-- PRODUIT 10-->
+
+            <article class="product-card">
+
+                <img
+                    src="images/i4.jpeg"
+                    alt="Casquette"
+                    class="product-image"
+                >
+
+                <div class="product-info">
+
+                    <h3 class="product-name">
+                        Casquette tendance
+                    </h3>
+
+                    <p class="product-price">
+                        9 000 FCFA
+                    </p>
+
+                    <a
+                        href="https://wa.me/2250720051143"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        class="buy-button"
+                    >
+
+                     
+
+                        Acheter 
+
+                        <span class="external-icon">
+                            ↗
+                        </span>
+
+                    </a>
+
+                </div>
+
+            </article>
+
+
+ <!-- PRODUIT 11-->
+
+            <article class="product-card">
+
+                <img
+                    src="images/i5.jpeg"
+                    alt="Casquette"
+                    class="product-image"
+                >
+
+                <div class="product-info">
+
+                    <h3 class="product-name">
+                        Casquette tendance
+                    </h3>
+
+                    <p class="product-price">
+                        9 000 FCFA
+                    </p>
+
+                    <a
+                        href="https://wa.me/2250720051143"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        class="buy-button"
+                    >
+
+                        
+
+                        Acheter 
+
+                        <span class="external-icon">
+                            ↗
+                        </span>
+
+                    </a>
+
+                </div>
+
+            </article>
+
+
+
+
+            <!-- PRODUIT 8 -->
+
+            <article class="product-card">
+
+                <img
+                    src="images/im10.jpg"
+                    alt="Coque de téléphone"
+                    class="product-image"
+                >
+
+                <div class="product-info">
+
+                    <h3 class="product-name">
+                        Coque de téléphone
+                    </h3>
+
+                    <p class="product-price">
+                        7 000 FCFA
+                    </p>
+
+                    <a
+                        href="https://wa.me/2250720051143"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        class="buy-button"
+                    >
+
+
+                        Acheter 
+
+                        <span class="external-icon">
+                            ↗
+                        </span>
+
+                    </a>
+
+                </div>
+
+            </article>
+ 
+
+            
+
+
+        </div>
+
+    </main>
+
+
+    <!-- =========================
+         PIED DE PAGE
+    ========================= -->
+
+    <footer>
+
+        <p>
+            © le bijou qui marque la différence
+           
+        </p>
+
+    </footer>
+
+
+</body>
+
+</html>

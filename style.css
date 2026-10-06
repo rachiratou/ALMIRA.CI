@@ -1,0 +1,630 @@
+/* =========================
+   RESET
+========================= */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+html {
+    scroll-behavior: smooth;
+}
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    color: #171717;
+    background: #ffffff;
+}
+a {
+    text-decoration: none;
+    color: inherit;
+}
+/* =========================
+   NAVBAR
+========================= */
+header {
+    width: 100%;
+    background: white;
+    position: relative;
+    z-index: 100;
+}
+.navbar {
+    width: 90%;
+    max-width: 1200px;
+    height: 80px;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.logo {
+    font-size: 30px;
+    font-weight: 900;
+    color: #e50914;
+    letter-spacing: -2px;
+}
+.logo span {
+    color: #111;
+}
+.nav-links {
+    display: flex;
+    gap: 40px;
+    list-style: none;
+}
+.nav-links a {
+    font-size: 15px;
+    font-weight: 600;
+    transition: 0.3s;
+}
+.nav-links a:hover {
+    color: #c5d5db;
+    background-color:#000000ef;
+}
+.nav-button {
+    background: #e50914;
+    color: white;
+    padding: 12px 22px;
+    border-radius: 30px;
+    font-weight: 600;
+    transition: 0.3s;
+}
+.nav-button:hover {
+    background: #b8000a;
+    transform: translateY(-2px);
+}
+/* =========================
+   HERO
+========================= */
+.hero {
+    min-height: calc(100vh - 80px);
+    width: 90%;
+    max-width: 1200px;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 60px;
+}
+.hero-content {
+    width: 55%;
+    animation: slideLeft 1s ease forwards;
+}
+.small-title {
+    color: #e50914;
+    font-size: 14px;
+    font-weight: 800;
+    letter-spacing: 3px;
+    margin-bottom: 20px;
+}
+.hero h1 {
+    font-size: clamp(50px, 7vw, 80px);
+    line-height: 1;
+    letter-spacing: -4px;
+    margin-bottom: 25px;
+}
+.hero h1 span {
+    color: #df484f;
+}
+.description {
+    max-width: 500px;
+    color: #666;
+    font-size: 18px;
+    line-height: 1.7;
+    margin-bottom: 35px;
+}
+/* =========================
+   BUTTONS
+========================= */
+.buttons {
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+.btn {
+    padding: 15px 25px;
+    border-radius: 30px;
+    font-weight: 700;
+    transition: 0.3s;
+}
+.primary {
+    background: #e50914;
+    color: white;
+    box-shadow: 0 10px 30px rgba(229, 9, 20, 0.25);
+}
+.primary:hover {
+    background: #bd0009;
+    transform: translateY(-4px);
+}
+.secondary {
+    border: 2px solid #e50914;
+    color: #e50914;
+}
+.secondary:hover {
+    background: #e50914;
+    color: white;
+}
+/* =========================
+   ANIMATION HERO
+========================= */
+.hero-animation {
+    width: 45%;
+    height: 500px;
+
+    position: relative;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+/* Grand cercle rouge */
+
+.red-circle {
+    width: 390px;
+    height: 390px;
+
+    position: absolute;
+
+    border-radius: 50%;
+
+    background: #e50914;
+
+    animation: pulse 4s ease-in-out infinite;
+}
+
+
+/* Logo qui flotte au-dessus du cercle */
+
+.floating-logo {
+    width: 280px;
+    height: 280px;
+
+    position: relative;
+    z-index: 5;
+
+    border-radius: 50%;
+
+    overflow: hidden;
+
+    background: white;
+
+    border: 8px solid white;
+
+    box-shadow:
+        0 20px 40px rgba(0, 0, 0, 0.25);
+
+    animation: floatingLogo 3s ease-in-out infinite;
+}
+
+
+/* Image du logo */
+
+.floating-logo img {
+    width: 100%;
+    height: 100%;
+
+    display: block;
+
+    object-fit: cover;
+
+    border-radius: 50%;
+}
+
+/* Grand cercle rouge */
+.red-circle {
+    width: 390px;
+    height: 390px;
+    border-radius: 50%;
+    background: #e50914;
+    position: absolute;
+    animation: pulse 4s ease-in-out infinite;
+}
+/* Produit */
+.floating-product {
+    width: 300px;
+    height: 300px;
+
+    background: white;
+    border-radius: 50%;
+
+    position: relative;
+    z-index: 2;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.2);
+
+    animation: floating 3s ease-in-out infinite;
+
+    overflow: hidden;
+}
+
+.floating-product img {
+    width: 80%;
+    height: 80%;
+
+    object-fit: contain;
+
+    border-radius: 50%;
+}
+.product-icon {
+    width: 90px;
+    height: 90px;
+    background: #e50914;
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 45px;
+    margin-bottom: 20px;
+}
+.floating-product h3 {
+    font-size: 20px;
+    margin-bottom: 8px;
+}
+.floating-product p {
+    color: #777;
+    font-size: 13px;
+}
+/* Petits points */
+.floating-dot {
+    position: absolute;
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    background: #e50914;
+    z-index: 3;
+}
+.dot-1 {
+    top: 80px;
+    right: 50px;
+    animation: moveDot 3s infinite ease-in-out;
+}
+.dot-2 {
+    bottom: 80px;
+    left: 50px;
+    width: 25px;
+    height: 25px;
+    animation: moveDot 4s infinite ease-in-out reverse;
+}
+.dot-3 {
+    top: 50%;
+    right: 0;
+    width: 10px;
+    height: 10px;
+    animation: moveDot 2.5s infinite ease-in-out;
+}
+/* =========================
+   KEYFRAMES
+========================= */
+@keyframes floating {
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-20px);
+    }
+}
+@keyframes pulse {
+    0%,
+    100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.06);
+    }
+}
+@keyframes moveDot {
+    0%,
+    100% {
+        transform: translateY(0) translateX(0);
+    }
+    50% {
+        transform: translateY(-25px) translateX(15px);
+    }
+}
+@keyframes slideLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-60px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: scale(0.8);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+/* =========================
+   ACCESSOIRES
+========================= */
+
+
+/* =========================
+   RESPONSIVE TABLETTE
+========================= */
+
+@media (max-width: 768px) {
+
+    /* NAVBAR */
+    .navbar {
+        width: 95%;
+        height: auto;
+        min-height: 80px;
+        flex-direction: column;
+        justify-content: center;
+        gap: 20px;
+        padding: 15px 0;
+    }
+
+    .logo {
+        font-size: 26px;
+    }
+
+    .nav-links {
+        gap: 20px;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .nav-links a {
+        font-size: 14px;
+    }
+
+
+    /* HERO */
+
+    .hero {
+        width: 90%;
+        min-height: auto;
+        padding: 60px 0;
+        flex-direction: column;
+        text-align: center;
+        gap: 40px;
+    }
+
+    .hero-content {
+        width: 100%;
+    }
+
+    .small-title {
+        font-size: 12px;
+        margin-bottom: 15px;
+    }
+
+    .hero h1 {
+        font-size: clamp(40px, 10vw, 60px);
+        letter-spacing: -2px;
+    }
+
+    .description {
+        margin-left: auto;
+        margin-right: auto;
+        font-size: 16px;
+    }
+
+
+    /* BOUTONS */
+
+    .buttons {
+        justify-content: center;
+    }
+
+
+    /* ANIMATION */
+
+    .hero-animation {
+        width: 100%;
+        height: 400px;
+    }
+
+    .red-circle {
+        width: 300px;
+        height: 300px;
+    }
+
+    .floating-logo {
+        width: 220px;
+        height: 220px;
+    }
+
+    .floating-product {
+        width: 230px;
+        height: 230px;
+    }
+
+}
+
+
+/* =========================
+   RESPONSIVE TÉLÉPHONE
+========================= */
+
+@media (max-width: 480px) {
+
+    /* NAVBAR */
+
+    .navbar {
+        width: 90%;
+    }
+
+    .logo {
+        font-size: 24px;
+    }
+
+    .nav-links {
+        gap: 12px;
+    }
+
+    .nav-links a {
+        font-size: 13px;
+    }
+
+    .nav-button {
+        padding: 10px 18px;
+    }
+
+
+    /* HERO */
+
+    .hero {
+        width: 90%;
+        padding: 40px 0;
+        gap: 20px;
+    }
+
+    .small-title {
+        font-size: 11px;
+        letter-spacing: 2px;
+    }
+
+    .hero h1 {
+        font-size: 38px;
+        letter-spacing: -2px;
+    }
+
+    .description {
+        font-size: 15px;
+        line-height: 1.6;
+    }
+
+
+    /* BOUTONS */
+
+    .buttons {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .btn {
+        width: 100%;
+        max-width: 280px;
+        text-align: center;
+        padding: 13px 20px;
+    }
+
+
+    /* ANIMATION */
+
+    .hero-animation {
+        height: 330px;
+    }
+
+    .red-circle {
+        width: 240px;
+        height: 240px;
+    }
+
+    .floating-logo {
+        width: 180px;
+        height: 180px;
+        border-width: 6px;
+    }
+
+    .floating-product {
+        width: 190px;
+        height: 190px;
+    }
+
+    .floating-product img {
+        width: 75%;
+        height: 75%;
+    }
+
+
+    /* PETITS POINTS */
+
+    .dot-1 {
+        top: 40px;
+        right: 20px;
+    }
+
+    .dot-2 {
+        bottom: 40px;
+        left: 20px;
+    }
+
+    .dot-3 {
+        right: 10px;
+    }
+
+}
+
+
+
+/* ALMIRA.CI comme élément de navigation */
+
+.logo a {
+    display: inline-block;
+    padding: 8px 14px;
+
+    color: #e50914;
+    text-decoration: none;
+
+    font-size: 30px;
+    font-weight: 900;
+
+    border: 2px solid #e50914;
+    border-radius: 8px;
+
+    cursor: pointer;
+
+    transition: all 0.3s ease;
+}
+
+/* Effet au survol */
+.logo a:hover {
+    background-color: #e50914;
+    color: white;
+}
+
+/* Effet au clic / toucher */
+.logo a:active {
+    transform: scale(0.95);
+}
+/* ALMIRA.CI comme élément de navigation */
+
+.logo a {
+    display: inline-block;
+    padding: 8px 14px;
+
+    color: #e50914;
+    text-decoration: none;
+
+    font-size: 30px;
+    font-weight: 900;
+
+    border: 2px solid #e50914;
+    border-radius: 8px;
+
+    cursor: pointer;
+
+    transition: all 0.3s ease;
+}
+
+/* Effet au survol */
+.logo a:hover {
+    background-color: #e50914;
+    color: white;
+}
+
+/* Effet au clic / toucher */
+.logo a:active {
+    transform: scale(0.95);
+}
+
+
+
+
